@@ -1,3 +1,5 @@
 http://www.mcatquestion.com/
 
- git config --global user.email "you@example.com"
+https://www.nationalgeographic.com/photography/
+
+ https://www.merriam-webster.com/word-of-the-day
