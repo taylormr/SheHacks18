@@ -74,6 +74,16 @@
 
 		}
 
+		function setUpCalendar(elementID, calendarID) {
+    		
+    		$(elementID).fullCalendar({
+				googleCalendarApiKey: '<YOUR API KEY>',
+    			events: {
+        			googleCalendarId: calendarID
+        		}
+        	});
+		}
+
 		$( document ).ready(function() {
 
 			console.log("Document ready");
@@ -104,6 +114,10 @@
 				event.preventDefault();
 			});
 
+			// Set up the calendar
+			var PivsCal = '2c26hnlqhj22kljceoin71o60k@group.calendar.google.com';
+			setUpCalendar('#calendar', '');
+
 		});
 		
 	</script>
@@ -121,7 +135,7 @@
 				<div class="row">
 
 					<!-- Calendar -->
-					<div class="col-md-12">
+					<div class="col-md-12" id="calendar">
 						
 						<h2>Calendar</h2>
 
