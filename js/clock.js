@@ -17,7 +17,7 @@ function clock(dayID, monthID, yearsID, hoursID, minutesID) {
 	$("#" + hoursID).text(("0" + hours).slice(-2));
 	$("#" + minutesID).text(("0" + minutes).slice(-2));
 
-    var t = setTimeout(clock, 500);
+    var t = setTimeout(clock, 100);
 }
 
 
