@@ -22,6 +22,8 @@
 	<link rel='stylesheet' href='fullcalendar/fullcalendar.min.css' />
 	<script src='fullcalendar/lib/moment.min.js'></script>
 	<script src='fullcalendar/fullcalendar.min.js'></script>
+	<script type='text/javascript' src='fullcalendar/gcal.min.js'></script>
+
 	
 	<!-- Fonts -->
 
@@ -32,11 +34,10 @@
 	    // document.addEventListener("DOMContentLoaded", init);
 	    function LoadPage(){
 		  $.get('http://mcatquestionoftheday.com/', function(data) {
-		    // $('#siteloader').html(data);
-		    // console.log(data);
+
 		    var question = $(data).find(".entry");
 
-		    $('#siteloader').html(question); // TODO Change id?
+		    $('#questOTD').html(question); // TODO Change id?
 		    $('#polls-523-loading').remove();
 		    $('#mailchimp').remove();
 		    $('.twitter-share-button').parent().remove();
@@ -77,11 +78,32 @@
 		function setUpCalendar(elementID, calendarID) {
     		
     		$(elementID).fullCalendar({
-				googleCalendarApiKey: '<YOUR API KEY>',
+				googleCalendarApiKey: 'AIzaSyDbyT1SHJ9bZtwIbNSj1-MJPoRBAouaeSA',
     			events: {
         			googleCalendarId: calendarID
-        		}
+        		},
+				defaultView: 'listMonth',
+		    	validRange: function(nowDate) {
+		        	return {
+		            	start: nowDate
+		        	};
+		    	}
         	});
+		}
+
+		function toggleHandlers() {
+
+			$( "#toggle-calendar" ).click(hideElement());
+			$( "#toggle-wotd" ).click(hideElement());
+			$( "#toggle-quote" ).click(hideElement());
+			$( "#toggle-qotd" ).click(hideElement());
+			$( "#toggle-links" ).click(hideElement());
+			$( "#toggle-scholar" ).click(hideElement());
+
+		}
+
+		function hideElement(elementID){
+
 		}
 
 		$( document ).ready(function() {
@@ -115,8 +137,8 @@
 			});
 
 			// Set up the calendar
-			var PivsCal = '2c26hnlqhj22kljceoin71o60k@group.calendar.google.com';
-			setUpCalendar('#calendar', '');
+			var classCal = '2c26hnlqhj22kljceoin71o60k@group.calendar.google.com';
+			setUpCalendar('#calendar', classCal);
 
 		});
 		
@@ -183,8 +205,39 @@
 
 					<!-- Icons -->
 					<div class="col-md-12">
-						
-						<h2>Icons</h2>
+
+						<ul id="toggle-icons">
+							<li>
+								<a href="#" id="toggle-calendar">
+									Calendar
+								</a>
+							</li>
+							<li>
+								<a href="#" id="toggle-wotd">
+									WOTD
+								</a>
+							</li>
+							<li>
+								<a href="#" id="toggle-quote">
+									Quote
+								</a>
+							</li>
+							<li>
+								<a href="#" id="toggle-qotd">
+									QOTD
+								</a>
+							</li>
+							<li>
+								<a href="#" id="toggle-links">
+									Links
+								</a>
+							</li>
+							<li>
+								<a href="#" id="toggle-scholar">
+									Scholar
+								</a>
+							</li>
+						</ul>
 
 					</div>
 
@@ -208,15 +261,8 @@
 			<div class="col-md-3">
 
 				<!-- Scholar -->
-				<div class="col-md-12">
-						
-					<h2>Scholar</h2>
-
-					<!-- <form>
-						
-
-					</form> -->
-
+				<div class="col-md-12" id="scholar-widget">
+				
 					<!-- <form method="get" action="http://scholar.google.com/"> -->
 					<form action="" id="scholar-search">
 						<input type="text" name="search-input" id="search-input" />
@@ -226,7 +272,7 @@
 				</div>
 
 				<!-- Links -->
-				<div class="col-md-12">
+				<div class="col-md-12" id="fav-links">
 						
 					<h2>Links</h2>
 					<ul style="list-style-type:circle">
@@ -240,22 +286,7 @@
 				</div>
 
 				<!-- Question of the Day -->
-				<div class="col-md-12">
-						
-					<script>
-					    // $(function(){
-					    //     $('#siteloader').load('http://mcatquestionoftheday.com/');
-					    // });
-
-					</script>
-
-					<div id="siteloader">
-
-					</div>
-
-					<!-- <div id="qotd" style="display:block;overflow:hidden;width:275px; height:300px;">
-						<iframe id="qotd-iframe" src="http://kaplanquizzes.com/mcat/" width="100%" height="4000" frameborder="0" scrolling="yes"></iframe>
-					</div> -->
+				<div class="col-md-12" id="questOTD">
 
 				</div>
 
