@@ -44,14 +44,34 @@
 		    // console.log(data);
 		    var question = $(data).find(".entry");
 
-		    $('#siteloader').html(question);
+		    $('#siteloader').html(question); // TODO Change id?
 		    $('#polls-523-loading').remove();
 		    $('#mailchimp').remove();
 		    $('.twitter-share-button').parent().remove();
 		    $("#ans523 div").remove();
 		  });
 
-		  /*http://www.dictionary.com/wordoftheday/2018/01/27/flakelet*/
+		}
+
+		function wordOfTheDay() {
+			/*http://www.dictionary.com/wordoftheday/2018/01/27/flakelet */
+
+			var urlbase = "http://www.dictionary.com/wordoftheday/";
+			var today = new Date();
+
+			var day = ("0" + today.getDate() ).slice(-2);
+    		var month = today.getMonth() + 1;
+    		month = ("0" + month).slice(-2);
+
+			var url = urlbase + today.getFullYear() + "/" + month + "/" + day + "/flakelet";
+
+			$.get(url, function(data) {
+			    var question = $(data).find(".tile-wrapper");
+			    $('#wotd').html(question);
+			    $('.definition-box').remove();
+		  	});
+
+
 		}
 
 		$( document ).ready(function() {
@@ -60,6 +80,8 @@
 			clock("day", "month", "year", "clockHours", "clockMinutes");
 
 			LoadPage();
+
+			wordOfTheDay();
 
 		});
 		
@@ -85,7 +107,7 @@
 					</div>
 
 					<!-- Word of the Day -->
-					<div class="col-md-12">
+					<div class="col-md-12" id="wotd">
 
 						<h2>Word of the Day</h2>
 
