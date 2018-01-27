@@ -59,10 +59,11 @@
 			var url = urlbase + today.getFullYear() + "/" + month + "/" + day + "/flakelet";
 
 			$.get(url, function(data) {
-			    var question = $(data).find(".tile-wrapper");
+			    var question = $(data).find(".tile-image");
 			    $('#wotd').html(question);
 			    $('.definition-box').remove();
-			    $('.day-break-subscription-form').remove();
+			   // $('.day-break').remove();
+			   console.log($('.day-break').html());
 		  	});
 		}
 
@@ -85,7 +86,7 @@
 
 			wordOfTheDay();
 			quoteOfTheDay();
-			/**/
+
 
 		});
 		
