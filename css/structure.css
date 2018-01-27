@@ -1,26 +1,25 @@
+div.empty-col {
+	max-width: 1.5em;
+}
 
-/* --- Columns --- */
-#colB {
+div#colA, div#colB, div#colC {
+	margin: 0 auto;
+	width: 100%;
+	padding: 0;
+	position: relative;
+}
+
+div#colB {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 }
 
-#mid-col {
-    /*position: absolute;
-    top: 50%;
-    transform: translateY(-50%);*/
+div#scholar-search {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
 }
-
-div#time {
-    font-size: 8em;
-}
-
-div#date {
-    font-size: 2em;
-}
-
-
 
 
 
