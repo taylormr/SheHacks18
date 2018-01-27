@@ -9,6 +9,37 @@ div.date {
 }
 
 #qotd{
-	height: 1800px;
-	overflow: hidden;
+	/*height: 1800px;*/
+	/*max-height: 50vh;*/
+	/*overflow: hidden;*/
+	padding: 0;
+	margin: 0;
+    height: 70vh;
+    overflow : hidden;
+    position : relative;
 }
+
+#qotd-iframe {
+    position : absolute;
+    top      : -3500px;
+    left     : -100px;
+    margin: auto 0;
+    zoom: 0.25;
+}
+
+/*#my-div
+{
+    width    : 400px;
+    height   : 200px;
+    overflow : hidden;
+    position : relative;
+}
+
+#my-iframe
+{
+    position : absolute;
+    top      : -100px;
+    left     : -100px;
+    width    : 1280px;
+    height   : 1200px;
+}*/

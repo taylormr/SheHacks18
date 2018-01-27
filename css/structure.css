@@ -7,5 +7,23 @@ body {
 	-o-background-size: cover;
 	background-size: cover;
 
-	
 }
+
+/* --- Columns --- */
+
+/*#mid-col {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+*/
+
+
+div#time {
+	font-size: 8em;
+}
+
+div#date {
+	font-size: 2em;
+}
+
