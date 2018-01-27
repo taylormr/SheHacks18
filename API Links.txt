@@ -1,3 +1,5 @@
 http://media.collegeboard.com/email/libraries/samples/sample_qotd.html
 
- git config --global user.email "you@example.com"
+https://www.nationalgeographic.com/photography/
+
+ https://www.merriam-webster.com/word-of-the-day
