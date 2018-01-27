@@ -32,11 +32,24 @@
 	    // }
 
 	    // document.addEventListener("DOMContentLoaded", init);
+	    function LoadPage(){
+		  $.get('http://mcatquestionoftheday.com/', function(data) {
+		    // $('#siteloader').html(data);
+		    // console.log(data);
+		    var question = $(data).find(".entry");
+
+		    $('#siteloader').html(question);
+		    $('#polls-523-loading').remove();
+
+		  });
+		}
 
 		$( document ).ready(function() {
 
 			console.log("Document ready");
 			clock("day", "month", "year", "clockHours", "clockMinutes");
+
+			LoadPage();
 
 		});
 		
@@ -77,8 +90,8 @@
 			</div>
 
 			<!-- Column B -->
-			<div class="col-md-4">
-				<div class="row">
+			<div class="col-md-4" id="colB"> 
+				<div class="row" id="mid-col">
 
 					<!-- Clock & Date -->
 					<div class="col-md-12">
@@ -154,9 +167,20 @@
 				<!-- Question of the Day -->
 				<div class="col-md-12">
 						
-					<div id="qotd" style="display:block;overflow:hidden;width:275px; height:300px;">
-						<iframe id="qotd-iframe" src="http://kaplanquizzes.com/mcat/" width="100%" height="4000" frameborder="0" scrolling="yes"></iframe>
+					<script>
+					    // $(function(){
+					    //     $('#siteloader').load('http://mcatquestionoftheday.com/');
+					    // });
+
+					</script>
+
+					<div id="siteloader">
+
 					</div>
+
+					<!-- <div id="qotd" style="display:block;overflow:hidden;width:275px; height:300px;">
+						<iframe id="qotd-iframe" src="http://kaplanquizzes.com/mcat/" width="100%" height="4000" frameborder="0" scrolling="yes"></iframe>
+					</div> -->
 
 				</div>
 

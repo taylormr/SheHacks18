@@ -11,6 +11,10 @@ body {
 
 /* --- Columns --- */
 
+#colB {
+	position: relative;
+}
+
 #mid-col {
 	position: absolute;
   	top: 50%;
