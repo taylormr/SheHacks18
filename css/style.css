@@ -2,7 +2,7 @@
 
 body {
     /* Background */
-    background: url(../assets/drillfield.jpg) no-repeat center center fixed; 
+    background: url(../assets/GradientWallpaper.jpg) no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -10,10 +10,14 @@ body {
 
     /* Text */
     text-align: center;
+    font-family: 'Nunito Sans', sans-serif;
 }
 
 div#time {
     font-size: 6em;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    color: white;
 }
 
 div#date {
