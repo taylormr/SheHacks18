@@ -11,6 +11,7 @@ body {
     /* Text */
     text-align: center;
     font-family: 'Nunito Sans', sans-serif;
+    color: white;
 }
 
 h2 {
@@ -25,11 +26,11 @@ div#time {
     /*font-family: 'Lato', sans-serif;*/
     font-family: 'Open Sans', sans-serif;
     font-weight: 700;
-    color: white;
 }
 
 div#date {
     font-size: 2em;
+    color: white;
 }
 
 #qotd{
@@ -82,7 +83,7 @@ ul#toggle-icons li {
 
 #wotd strong{
 	font-size: 1.5em;
-	font-family: 'Slabo 27px', serif;
+	font-family: 'Cutive Mono', monospace;
 }
 
 }
