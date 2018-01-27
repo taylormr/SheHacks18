@@ -114,13 +114,30 @@ ul#toggle-icons li a:hover svg path {
 
 /* Minimize a random annoying div */
 #questOTD center + div {
-	display: none;
+	/*display: none;*/
 }
 
 #questOTD p {
 	font-size: 0.8em;
 	margin-top: 0;
 	margin-bottom: 0;
+}
+
+/* Answer */
+div#ans523 {
+	margin-top: 15px;
+}
+
+div#polls-523-ans {
+	font-size: 12px;
+}
+
+div#polls-523-ans input[type=radio] {
+	margin-right: 5px;
+}
+
+input#answer523 {
+	font-size: 12px;
 }
 
 #questOTD, #quoteOTD, #wotd, #calendar {
@@ -133,6 +150,21 @@ ul#toggle-icons li a:hover svg path {
 	   border-radius: 50px 15px 30px;
 	   padding: 10px;
 	   padding-right: 15px;
+}
+
+span#links-title {
+	display: inline;
+	padding: 0;
+}
+
+span#links-title img {
+	display: inline;
+	height: 28px;
+	padding: 1px 0 1px 0;
+}
+
+span#links-title h2 {
+	display: inline;
 }
 
 
@@ -285,5 +317,88 @@ td.fc-widget-header {
 .fc-unthemed th,
 .fc-unthemed thead {
 	border: none;
+}
+
+
+/* --- Settings --------------- */
+
+a#settings-link {
+	position: absolute;
+	bottom: 30px;
+	left: 30px;
+	margin: 0;
+	padding: 0;
+}
+
+a#settings-link img {
+	height: 30px;
+}
+
+
+/* The Overlay (background) */
+.overlay {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */    
+    height: 0;
+    width: 100%;
+    position: fixed; /* Stay in place */
+    z-index: 100; /* Sit on top */
+    left: 0;
+    bottom: 0;
+    background-color: rgb(0,0,0); /* Black fallback color */
+    background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+    overflow-y: hidden;
+    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* Position the content inside the overlay */
+.overlay-content {
+    position: relative;
+    top: 25%; /* 25% from the top */
+    width: 100%; /* 100% width */
+    text-align: center; /* Centered text/links */
+    margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+
+.overlay-content h2 {
+	font-size: 2em;
+	font-family: 'Nunito Sans', sans-serif;
+}
+
+/* The navigation links inside the overlay */
+.overlay a {
+    /*padding: 8px;*/
+    text-decoration: none;
+    /*font-size: 36px;*/
+    color: #818181;
+    display: block; /* Display block instead of inline */
+    transition: 0.3s; /* Transition effects on hover (color) */
+}
+
+/* When you mouse over the navigation links, change their color */
+.overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+}
+
+/* Position the close button (top right corner) */
+.overlay #close-settings {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+}
+
+/* --------- MENU OPTIONS ---------- */
+
+.overlay h3 {
+	font-size: 16px:;
+}
+
+ul.options {
+	list-style-type: none;
+	font-size: 1em;
+}
+
+ul.options li {
+	display: inline;
 }
 

@@ -21,6 +21,7 @@
     <!-- JavaScript -->
     <script type="text/javascript" src="js/clock.js"></script>
     <script type="text/javascript" src="js/clickhandlers.js"></script>
+    <script type="text/javascript" src="js/widgets.js"></script>
     
     <!-- FullCalendar.io -->
     <link rel='stylesheet' href='fullcalendar/fullcalendar.min.css' />
@@ -35,96 +36,6 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Cutive+Mono" rel="stylesheet">
     <script type="text/javascript">
-
-    
-    function questionOfTheDay() {
-        $.get('http://mcatquestionoftheday.com/', function(data) {
-
-            var question = $(data).find(".entry");
-            console.log("QUESTION");
-            console.log(question.html());
-
-            $('#questOTD').append(question); // TODO Change id?
-            $('#polls-523-loading').remove();
-            $('#mailchimp').remove();
-            $('.twitter-share-button').parent().remove();
-            $("#ans523 div").remove();
-        });
-
-    }
-
-    function wordOfTheDay() {
-        /*http://www.dictionary.com/wordoftheday/2018/01/27/flakelet */
-
-        var urlbase = "http://www.dictionary.com/wordoftheday/";
-        var today = new Date();
-
-        var day = ("0" + today.getDate()).slice(-2);
-        var month = today.getMonth() + 1;
-        month = ("0" + month).slice(-2);
-
-        var url = urlbase + today.getFullYear() + "/" + month + "/" + day + "/flakelet";
-
-        $.get(url, function(data) {
-            var quotedata = $(data).find(".definition-box");
-            var dailyWord = $(quotedata).find("strong");
-            var dailyDefinition = $(quotedata).find("ol");
-            $('#wotd').append(dailyWord);
-            $('#wotd').append(dailyDefinition);
-
-            console.log(quotedata.html());
-            console.log(dailyWord.html());
-            console.log(dailyDefinition.html());
-
-        });
-    }
-
-    function quoteOfTheDay() {
-        $.get('http://www.eduro.com/', function(data) {
-            /*First instance of the daily quote*/
-            var quotedata = $(data).find("dailyquote").first();
-
-            $('#quoteOTD').prepend(quotedata);
-
-        });
-
-    }
-
-    function setUpCalendar(elementID, calendarID) {
-
-        $(elementID).fullCalendar({
-            googleCalendarApiKey: 'AIzaSyDbyT1SHJ9bZtwIbNSj1-MJPoRBAouaeSA',
-            events: {
-                googleCalendarId: calendarID
-            },
-            defaultView: 'listMonth',
-            validRange: function(nowDate) {
-                return {
-                    start: nowDate
-                };
-            }
-        });
-    }
-
-    /**
-     * Scholar search:
-     * https://scholar.google.com/scholar?hl=en&as_sdt=0%2C47&q=elephant+seal&btnG
-     */
-    function scholarSearch() {
-        $("#scholar-search").submit(function(event) {
-
-            var queryBase = "https://scholar.google.com/scholar?hl=en&as_sdt=0%2C47&q=";
-
-            // Get user input
-            var userInput = $("#search-input").val();
-
-            // Create search
-            var query = queryBase + userInput.replace(' ', '+') + "&btnG=";
-            window.open(query, '_blank');
-
-            event.preventDefault();
-        });
-    }
 
 
     $(document).ready(function() {
@@ -145,8 +56,14 @@
 
         addTogglerHandlers();
 
+        // Settings menu
+        openSettingsHandler();
+        closeSettingsHandler()
+
         // Set up the calendar
         var classCal = '2c26hnlqhj22kljceoin71o60k@group.calendar.google.com';
+        // var workCal = 'phmc1i1lh5722accvg6chj09bg@group.calendar.google.com';
+
         setUpCalendar('#calendar', classCal);
 
     });
@@ -154,19 +71,58 @@
 </head>
 
 <body>
+
+    <!-- Overlay menu -->
+    <div id="settings-menu" class="overlay">
+
+      <!-- Button to close the overlay navigation -->
+      <a href="#" id="close-settings" title="Close Settings">&times;</a>
+
+      <!-- Overlay content -->
+      <div class="overlay-content">
+
+        <h2>Settings</h2>
+
+        <hr>
+
+        <h3>BACKGROUND</h3>
+        <h3>CALENDARS</h3>
+
+
+  <!--       <ul id="background-options" class="options">
+            <li>
+                <a href="">Gradient</a>
+            </li>
+            <li>
+                <a href="">Solid Color</a>
+            </li>
+        </ul>
+ -->
+        <!-- <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a> -->
+      </div>
+
+    </div>
+    <!-- END: Overlay menu -->
+
     <div class="container-fluid">
         <div class="row">
             <!-- Column A -->
             <div class="col-md-3" id="colA">
                 <div class="row">
+                    
                     <!-- Calendar -->
                     <div class="col-md-12" id="calendar">
                     </div>
+
                     <!-- Word of the Day -->
                     <div class="col-md-12" id="wotd">
                         <h2>Word of the Day</h2>
                         <a class="item-source" href="http://www.dictionary.com/wordoftheday/" target="_blank">Courtesy of Dictionary.com</a>
                     </div>
+
                 </div>
             </div>
             <!-- Empty -->
@@ -347,7 +303,10 @@
                 <!-- Links -->
                 <div class="col-md-12" id="fav-links">
                     
-                    <h2>Links</h2>
+                    <!-- <span id="links-title"> -->
+                        <!-- <img src="assets/icons/heart.svg"> -->
+                        <h2>Links</h2>
+                    <!-- </span> -->
                     
                     <ul>
                         <li>
@@ -379,6 +338,11 @@
 
 		</div>
 	</div>
+
+    <a href="#" title="Settings" id="settings-link">
+                        <img src="assets/icons/settings.svg" alt="Settings">
+                    </a>
+
 </body>
 
 </html>

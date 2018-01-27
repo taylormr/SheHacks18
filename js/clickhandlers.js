@@ -37,3 +37,25 @@ function hideElement(elementID, togglerID) {
         });
         
     }
+
+        /* Open */
+    function openSettingsMenu() {
+        $("#settings-menu").height('100%');
+    }
+
+    /* Close */
+    function closeSettingsMenu() {
+        $("#settings-menu").height('0%');
+    }
+
+    function openSettingsHandler() {
+        $("#settings-link").click(function() {
+            openSettingsMenu();
+        });
+    }
+
+    function closeSettingsHandler() {
+        $("#close-settings").click(function() {
+            closeSettingsMenu() 
+        });
+    }
