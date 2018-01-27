@@ -63,12 +63,22 @@
 		  	});
 		}
 
+
 		function calendarSetUp() {
 		    
 		    $('#calendar').fullCalendar({
         		// put your options and callbacks here
 		    
 		    });
+		}
+
+		function quoteOfTheDay(){
+		  $.get('http://www.eduro.com/', function(data) {
+		  	/*First instance of the daily quote*/
+		    var question = $(data).find("dailyquote").first();
+
+		    $('#quoteOTD').html(question);
+		  });
 
 		}
 
@@ -81,6 +91,7 @@
 			questionOfTheDay();
 
 			wordOfTheDay();
+			quoteOfTheDay();
 
 		});
 		
@@ -153,7 +164,7 @@
 					</div>
 
 					<!-- Quote -->
-					<div class="col-md-12">
+					<div class="col-md-12" id="quoteOTD">
 						
 						<h2>Quote</h2>
 
