@@ -39,6 +39,8 @@
 		  $.get('http://mcatquestionoftheday.com/', function(data) {
 
 		    var question = $(data).find(".entry");
+		    console.log("QUESTION");
+			console.log(question.html());
 
 		    $('#questOTD').append(question); // TODO Change id?
 		    $('#polls-523-loading').remove();
@@ -62,13 +64,13 @@
 			var url = urlbase + today.getFullYear() + "/" + month + "/" + day + "/flakelet";
 
 			$.get(url, function(data) {
-			    var question = $(data).find(".definition-box");
-			    var dailyWord = $(question).find("strong");
-			    var dailyDefinition = $(question).find("ol");
+			    var quotedata = $(data).find(".definition-box");
+			    var dailyWord = $(quotedata).find("strong");
+			    var dailyDefinition = $(quotedata).find("ol");
 			    $('#wotd').append(dailyWord);
 			    $('#wotd').append(dailyDefinition);
 
-			    console.log(question.html());
+			    console.log(quotedata.html());
 			    console.log(dailyWord.html());
 			    console.log(dailyDefinition.html());
 
@@ -78,9 +80,10 @@
 		function quoteOfTheDay(){
 		  $.get('http://www.eduro.com/', function(data) {
 		  	/*First instance of the daily quote*/
-		    var question = $(data).find("dailyquote").first();
+		    var quotedata = $(data).find("dailyquote").first();
 
-		    $('#quoteOTD').html(question);
+		    $('#quoteOTD').prepend(quotedata);
+
 		  });
 
 		}
@@ -144,9 +147,9 @@
 		}
 
 		$( document ).ready(function() {
-
-			console.log("Document ready");
-			clock("day", "month", "year", "clockHours", "clockMinutes");
+			
+			//clock("day", "month", "year", "clockHours", "clockMinutes");
+			clock();
 
 			LoadPage();
 
@@ -206,6 +209,7 @@
 
 						<h2>Word of the Day</h2>
 
+						<a class="item-source" href="http://www.dictionary.com/wordoftheday/" target="_blank">Courtesy of Dictionary.com</a>
 					</div>
 
 				</div>
@@ -281,9 +285,7 @@
 
 					<!-- Quote -->
 					<div class="col-md-12" id="quoteOTD">
-						
-						<h2>Quote</h2>
-
+						<a class="item-source" href="http://www.eduro.com/" target="_blank">Courtesy of Eduro.com</a>
 					</div>
 
 				</div>
@@ -303,8 +305,8 @@
 				
 					<!-- <form method="get" action="http://scholar.google.com/"> -->
 					<form action="" id="scholar-search">
-						<input type="text" name="search-input" id="search-input" />
-						<input type="submit" value="Search" placeholder="Search Google Scholar"/>
+						<input type="text" name="search-input" id="search-input" placeholder="Search Google Scholar" size="25" />
+						<input type="submit" value="Search"/>
 					</form>
 
 				</div>
@@ -314,11 +316,11 @@
 						
 					<h2>Links</h2>
 					<ul>
-					  <li><a href="https://canvas.vt.edu">Canvas</a></li>
-					  <li><a href="http://www.webassign.net">WebAssign</a></li>
-					  <li><a href="https://github.com">GitHub</a></li>
-			          <li><a href="https://www.pearsonmylabandmastering.com/northamerica/masteringphysics/">MasteringPhysics</a></li>
-		    	      <li><a href="https://drive.google.com/drive/my-drive">Google Drive</a></li>
+					  <li><a href="https://canvas.vt.edu" target="_blank">Canvas</a></li>
+					  <li><a href="http://www.webassign.net" target="_blank">WebAssign</a></li>
+					  <li><a href="https://github.com" target="_blank">GitHub</a></li>
+			          <li><a href="https://www.pearsonmylabandmastering.com/northamerica/masteringphysics/" target="_blank">MasteringPhysics</a></li>
+		    	      <li><a href="https://drive.google.com/drive/my-drive" target="_blank">Google Drive</a></li>
 					</ul>
 
 				</div>
@@ -326,6 +328,9 @@
 				<!-- Question of the Day -->
 				<div class="col-md-12" id="questOTD">
 					<h2>Question of the Day</h2>
+
+					<a class="item-source" href="http://mcatquestionoftheday.com/" target="_blank">Courtesy of MCAT Question of the Day</p>
+
 				</div>
 
 			</div>
