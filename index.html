@@ -59,9 +59,16 @@
 			var url = urlbase + today.getFullYear() + "/" + month + "/" + day + "/flakelet";
 
 			$.get(url, function(data) {
-			    var question = $(data).find(".tile-image");
-			    $('#wotd').html(question);
-			    $('.definition-box').remove();
+			    var question = $(data).find(".definition-box");
+			    var dailyWord = $(question).find("strong");
+			    var dailyDefinition = $(question).find("ol");
+			    $('#wotd').append(dailyWord);
+			    $('#wotd').append(dailyDefinition);
+
+			    console.log(question.html());
+			    console.log(dailyWord.html());
+			    console.log(dailyDefinition.html());
+
 		  	});
 		}
 
@@ -187,15 +194,14 @@
 
 					<!-- Calendar -->
 					<div class="col-md-12" id="calendar">
-						
-						<h2>Calendar</h2>
+	
 
 					</div>
 
 					<!-- Word of the Day -->
 					<div class="col-md-12" id="wotd">
 
-						<h2>Word of the Day</h2>
+						<h3>Word of the Day</h3>
 
 					</div>
 
