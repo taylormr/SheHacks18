@@ -19,19 +19,17 @@
 	<script type="text/javascript" src="js/clock.js"></script>
 
 	<!-- FullCalendar.io -->
-	<!-- https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.8.0/fullcalendar.min.js
-	https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.8.0/fullcalendar.min.css
-	https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.8.0/fullcalendar.print.css -->
+	<link type="text/css" rel="stylesheet" href="fullcalendar/fullcalendar.min.css">
+	<script src='fullcalendar/lib/moment.min.js'></script>
+	<script type="text/javascript" src="fullcalendar/fullcalendar.min.js"></script>
 	
-
 	<!-- Fonts -->
-
 
 
 	<script type="text/javascript">
 
 	    // document.addEventListener("DOMContentLoaded", init);
-	    function LoadPage(){
+	    function questionOfTheDay(){
 		  $.get('http://mcatquestionoftheday.com/', function(data) {
 		    // $('#siteloader').html(data);
 		    // console.log(data);
@@ -65,12 +63,22 @@
 		  	});
 		}
 
+		function calendarSetUp() {
+		    
+		    $('#calendar').fullCalendar({
+        		// put your options and callbacks here
+		    
+		    });
+
+		}
+
 		$( document ).ready(function() {
 
 			console.log("Document ready");
 			clock("day", "month", "year", "clockHours", "clockMinutes");
 
-			LoadPage();
+
+			questionOfTheDay();
 
 			wordOfTheDay();
 
