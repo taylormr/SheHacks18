@@ -91,18 +91,45 @@
         	});
 		}
 
-		function toggleHandlers() {
-
-			$( "#toggle-calendar" ).click(hideElement());
-			$( "#toggle-wotd" ).click(hideElement());
-			$( "#toggle-quote" ).click(hideElement());
-			$( "#toggle-qotd" ).click(hideElement());
-			$( "#toggle-links" ).click(hideElement());
-			$( "#toggle-scholar" ).click(hideElement());
-
-		}
 
 		function hideElement(elementID){
+			
+			console.log("On CLICK Called!");
+
+			if( $(elementID).hasClass( "hiddenElement" ) ) {
+				$(elementID).removeClass("hiddenElement");
+			}
+			else {
+				$(elementID).addClass("hiddenElement");
+			}
+		}
+
+		function addTogglerHandlers() {
+
+			$( "#toggle-calendar" ).click(function(){
+				hideElement("#calendar");
+			});
+
+			$( "#toggle-wotd" ).click(function(){
+				hideElement("#wotd");
+			});
+
+			$( "#toggle-quote" ).click(function(){
+				hideElement("#quoteOTD");
+			});
+
+			$( "#toggle-qotd" ).click(function(){
+				hideElement("#questOTD");
+			});
+
+			$( "#toggle-links" ).click(function(){
+				hideElement("#fav-links");
+			});
+
+			$( "#toggle-scholar" ).click(function(){
+				hideElement("#scholar-widget");
+			});
+
 
 		}
 
@@ -139,6 +166,8 @@
 			// Set up the calendar
 			var classCal = '2c26hnlqhj22kljceoin71o60k@group.calendar.google.com';
 			setUpCalendar('#calendar', classCal);
+
+			addTogglerHandlers();
 
 		});
 		
