@@ -29,7 +29,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Nunito+Sans" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
-
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800" rel="stylesheet">
 
 	<script type="text/javascript">
 
@@ -39,7 +39,7 @@
 
 		    var question = $(data).find(".entry");
 
-		    $('#questOTD').html(question); // TODO Change id?
+		    $('#questOTD').append(question); // TODO Change id?
 		    $('#polls-523-loading').remove();
 		    $('#mailchimp').remove();
 		    $('.twitter-share-button').parent().remove();
@@ -325,8 +325,6 @@
 				<!-- Question of the Day -->
 				<div class="col-md-12" id="questOTD">
 					<h2>Question of the Day</h2>
-
-
 				</div>
 
 			</div>
