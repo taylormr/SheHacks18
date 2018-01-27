@@ -35,25 +35,6 @@ div#date {
     color: white;
 }
 
-#qotd{
-	/*height: 1800px;*/
-	/*max-height: 50vh;*/
-	/*overflow: hidden;*/
-	padding: 0;
-	margin: 0;
-    height: 200vh;
-  /*  overflow : auto;
-    position : relative;*/
-}
-
-#qotd-iframe {
-    position : relative;
-    top      : -2500px;
-    left     : 0px;
-    margin: auto 0;
-    zoom: 0.25;
-}
-
 
 .hiddenElement {
     visibility: hidden;
@@ -115,6 +96,7 @@ ul#toggle-icons li img {
 	  margin-top: 20px;
 	  padding: 15px;
 }
+
 #fav-links{
 	   border-radius: 50px 15px 30px;
 	   padding: 10px;
@@ -140,7 +122,6 @@ input[type=submit], #questOTD input {
 
 #questOTD input {
 	margin-top: 0;
-	min-width: 100%;
 }
 
 input#search-input{
