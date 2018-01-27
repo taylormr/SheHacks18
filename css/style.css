@@ -43,3 +43,13 @@ div.date {
     width    : 1280px;
     height   : 1200px;
 }*/
+
+.hiddenElement {
+
+    visibility: hidden;
+
+}
+
+#toggle-icons {
+    list-style-type: none;
+}
