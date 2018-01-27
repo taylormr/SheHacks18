@@ -1,31 +1,24 @@
 
-
-body {
-	background: url(../assets/drillfield.jpg) no-repeat center center fixed; 
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-
-}
-
 /* --- Columns --- */
-
 #colB {
-	position: relative;
+    position: relative;
 }
 
 #mid-col {
-	/*position: absolute;
-  	top: 50%;
-   	transform: translateY(-50%);*/
+    /*position: absolute;
+    top: 50%;
+    transform: translateY(-50%);*/
 }
 
 div#time {
-	font-size: 8em;
+    font-size: 8em;
 }
 
 div#date {
-	font-size: 2em;
+    font-size: 2em;
 }
+
+
+
+
 

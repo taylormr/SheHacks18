@@ -1,11 +1,23 @@
 /* Styling for the page */
 
 body {
-	text-align: center;
+    /* Background */
+    background: url(../assets/drillfield.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    /* Text */
+    text-align: center;
 }
 
-div.date {
-	
+div#time {
+    font-size: 6em;
+}
+
+div#date {
+    font-size: 2em;
 }
 
 #qotd{
@@ -32,6 +44,13 @@ div.date {
     visibility: hidden;
 }
 
-#toggle-icons {
+ul#toggle-icons {
     list-style-type: none;
 }
+
+
+ul#toggle-icons li {
+    display: inline;
+    padding: 0 0.3em 0 0.3em;
+}
+
