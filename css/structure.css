@@ -11,13 +11,11 @@ body {
 
 /* --- Columns --- */
 
-/*#mid-col {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+#mid-col {
+	position: absolute;
+  	top: 50%;
+  	transform: translateY(-50%);
 }
-*/
-
 
 div#time {
 	font-size: 8em;
