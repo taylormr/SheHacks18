@@ -30,13 +30,6 @@
 
 	<script type="text/javascript">
 
-	    // function init(){
-
-	    // 	console.log("Hey!");
-	    // 	clock("day", "month", "year", "clockHours", "clockMinutes");
-
-	    // }
-
 	    // document.addEventListener("DOMContentLoaded", init);
 	    function LoadPage(){
 		  $.get('http://mcatquestionoftheday.com/', function(data) {
@@ -70,8 +63,6 @@
 			    $('#wotd').html(question);
 			    $('.definition-box').remove();
 		  	});
-
-
 		}
 
 		$( document ).ready(function() {
