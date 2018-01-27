@@ -19,11 +19,10 @@
 	<script type="text/javascript" src="js/clock.js"></script>
 
 	<!-- FullCalendar.io -->
-	<!-- https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.8.0/fullcalendar.min.js
-	https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.8.0/fullcalendar.min.css
-	https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.8.0/fullcalendar.print.css -->
+	<link rel='stylesheet' href='fullcalendar/fullcalendar.min.css' />
+	<script src='fullcalendar/lib/moment.min.js'></script>
+	<script src='fullcalendar/fullcalendar.min.js'></script>
 	
-
 	<!-- Fonts -->
 
 
@@ -62,8 +61,6 @@
 			    var question = $(data).find(".tile-image");
 			    $('#wotd').html(question);
 			    $('.definition-box').remove();
-			   // $('.day-break').remove();
-			   console.log($('.day-break').html());
 		  	});
 		}
 
@@ -87,6 +84,25 @@
 			wordOfTheDay();
 			quoteOfTheDay();
 
+			/**
+			 * Scholar search:
+			 * https://scholar.google.com/scholar?hl=en&as_sdt=0%2C47&q=elephant+seal&btnG
+			 */
+			$( "#scholar-search" ).submit(function( event ) {
+			
+				var queryBase = "https://scholar.google.com/scholar?hl=en&as_sdt=0%2C47&q=";
+
+				// Get user input
+				var userInput = $("#search-input").val();
+
+				// Create search
+				var query = queryBase + userInput.replace(' ', '+') + "&btnG=";
+				console.log(query);
+				window.open(query, '_blank');
+
+
+				event.preventDefault();
+			});
 
 		});
 		
@@ -187,8 +203,9 @@
 
 					</form> -->
 
-					<form method="get" action="http://scholar.google.com/">
-						<input type="text" name="q" />
+					<!-- <form method="get" action="http://scholar.google.com/"> -->
+					<form action="" id="scholar-search">
+						<input type="text" name="search-input" id="search-input" />
 						<input type="submit" value="Search Google Scholar" />
 					</form>
 
