@@ -13,6 +13,13 @@ body {
     font-family: 'Nunito Sans', sans-serif;
 }
 
+h2 {
+	text-transform: uppercase;
+	font-size: 30px;
+	font-weight: bold;
+	color: white;
+}
+
 div#time {
     font-size: 6em;
     font-family: 'Lato', sans-serif;
@@ -56,5 +63,52 @@ ul#toggle-icons {
 ul#toggle-icons li {
     display: inline;
     padding: 0 0.3em 0 0.3em;
+}
+
+#fav-links, #quoteOTD, #questOTD{
+	   font-size: 1em;
+	   color: white;
+	   text-align: right;
+	   background-color: rgba(211,211,211,.1);
+	   margin-top: 10px;
+	   margin-bottom: 10px;
+	  
+}
+
+}
+#questOTD ul{
+	  list-style-type: none;
+	  text-align: left;
+}
+#questOTD, #quoteOTD {
+	  border-radius: 50px 15px 30px;
+	  margin-top: 20px;
+}
+#fav-links{
+	   border-radius: 50px 15px 30px;
+	   padding: 10px;
+	   padding-right: 15px;
+}
+
+
+#fav-links a{
+	color: white;
+}
+
+#fav-links ul{
+	list-style-type: none;
+}
+
+input[type=submit]{
+	padding: 5px 15px;
+	border-radius: 10px 10px 10px 10px;
+	border-style: none;
+	margin-left: 10px;
+}
+
+input#search-input{
+	background-color: rgba(255,255,255,.3);
+	/*border: 3px solid rgba(255,255,255,.6);*/
+	padding: 7px 2px 7px 2px;
 }
 
