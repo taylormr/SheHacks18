@@ -20,6 +20,7 @@
     
     <!-- JavaScript -->
     <script type="text/javascript" src="js/clock.js"></script>
+    <script type="text/javascript" src="js/clickhandlers.js"></script>
     
     <!-- FullCalendar.io -->
     <link rel='stylesheet' href='fullcalendar/fullcalendar.min.css' />
@@ -104,72 +105,6 @@
             }
         });
     }
-
-
-    function hideElement(elementID, togglerID) {
-
-        console.log("On CLICK Called!");
-
-        if ($(elementID).hasClass("hiddenElement")) {
-            $(elementID).removeClass("hiddenElement");
-            $(togglerID).addClass("iconToggled");
-
-        } else {
-            $(elementID).addClass("hiddenElement");
-            $(togglerID).removeClass("iconToggled");
-        }
-    }
-
-    function addTogglerHandlers() {
-
-        $("#toggle-calendar").click(function() {
-            hideElement("#calendar", "#toggle-calendar");
-        });
-
-        $("#toggle-wotd").click(function() {
-            hideElement("#wotd", "#toggle-wotd");
-        });
-
-        $("#toggle-quote").click(function() {
-            hideElement("#quoteOTD", "#toggle-quote");
-        });
-
-        $("#toggle-qotd").click(function() {
-            hideElement("#questOTD", "#toggle-qotd");
-        });
-
-        $("#toggle-links").click(function() {
-            hideElement("#fav-links", "#toggle-links");
-        });
-
-        $("#toggle-scholar").click(function() {
-            hideElement("#scholar-widget", "#toggle-scholar");
-        });
-        $("#toggle-calendar").click(function() {
-            hideElement("#calendar", "#toggle-calendar");
-        });
-
-        $("#toggle-wotd").click(function() {
-            hideElement("#wotd", "#toggle-wotd");
-        });
-
-        $("#toggle-quote").click(function() {
-            hideElement("#quoteOTD", "#toggle-quote");
-        });
-
-        $("#toggle-qotd").click(function() {
-            hideElement("#questOTD", "#toggle-qotd");
-        });
-
-        $("#toggle-links").click(function() {
-            hideElement("#fav-links", "#toggle-links");
-        });
-
-        $("#toggle-scholar").click(function() {
-            hideElement("#scholar-widget", "#toggle-scholar");
-        });
-    }
-
 
     /**
      * Scholar search:
@@ -393,30 +328,46 @@
                     </div>
                 </div>
             </div>
+            
             <!-- Empty 1 -->
             <div class="col-md-1 empty-col">
             </div>
+
             <!-- Column C -->
             <div class="col-md-3" id="colC">
                 <!-- Scholar -->
                 <div class="col-md-12" id="scholar-widget">
                     <!-- <form method="get" action="http://scholar.google.com/"> -->
                     <form action="" id="scholar-search">
-                        <input type="text" name="search-input" id="search-input" placeholder="Search Google Scholar" size="25" />
+                        <input type="text" name="search-input" id="search-input" placeholder="Search Google Scholar" size="20" />
                         <input type="submit" value="Search" />
                     </form>
                 </div>
+
                 <!-- Links -->
                 <div class="col-md-12" id="fav-links">
+                    
                     <h2>Links</h2>
+                    
                     <ul>
-                        <li><a href="https://canvas.vt.edu" target="_blank">Canvas</a></li>
-                        <li><a href="http://www.webassign.net" target="_blank">WebAssign</a></li>
-                        <li><a href="https://github.com" target="_blank">GitHub</a></li>
-                        <li><a href="https://www.pearsonmylabandmastering.com/northamerica/masteringphysics/" target="_blank">MasteringPhysics</a></li>
-                        <li><a href="https://drive.google.com/drive/my-drive" target="_blank">Google Drive</a></li>
+                        <li>
+                            <a href="https://canvas.vt.edu" target="_blank">Canvas</a>
+                        </li>
+                        <li>
+                            <a href="http://www.webassign.net" target="_blank">WebAssign</a>
+                        </li>
+                        <li>
+                            <a href="https://github.com" target="_blank">GitHub</a>
+                        </li>
+                        <li>
+                            <a href="https://www.pearsonmylabandmastering.com/northamerica/masteringphysics/" target="_blank">MasteringPhysics</a>
+                        </li>
+                        <li>
+                            <a href="https://drive.google.com/drive/my-drive" target="_blank">Google Drive</a>
+                        </li>
                     </ul>
                 </div>
+
                 <!-- Question of the Day -->
                 <div class="col-md-12" id="questOTD">
                     <h2>Question of the Day</h2>
