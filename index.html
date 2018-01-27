@@ -91,13 +91,13 @@
 				googleCalendarApiKey: 'AIzaSyDbyT1SHJ9bZtwIbNSj1-MJPoRBAouaeSA',
     			events: {
         			googleCalendarId: calendarID
-				}
-				,// defaultView: 'listMonth',
-		  //   	validRange: function(nowDate) {
-		  //       	return {
-		  //           	start: nowDate
-		  //       	};
-		  //   	}
+				},
+				defaultView: 'listMonth',
+		  		validRange: function(nowDate) {
+		  			return {
+		  				start: nowDate
+		  			};
+		  		}
         	});
 		}
 
@@ -218,7 +218,7 @@
 
 			<!-- Column B -->
 			<div class="col-md-4" id="colB"> 
-				<div class="row" id="mid-col">
+				<div class="row">
 
 					<!-- Clock & Date -->
 					<div class="col-md-12">
@@ -242,7 +242,7 @@
 					</div>
 
 					<!-- Icons -->
-					<div class="col-md-12">
+					<div class="col-md-12" id="icon-col">
 
 						<ul id="toggle-icons">
 							<li>
