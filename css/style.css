@@ -77,20 +77,21 @@ ul#toggle-icons li img {
 
 }
 
+#fav-links, #quoteOTD, #wotd, #calendar{
+	text-align: right;
+}
+
 #fav-links, #quoteOTD, #questOTD, #wotd, #calendar{
 	   font-size: 1em;
 	   color: white;
-	   text-align: right;
 	   background-color: rgba(211,211,211,.1);
 	   margin-top: 15px;
 	   margin-bottom: 15px;
-	  
 }
-#wotd{
+	  
+#wotd {
 	text-align: left;
-	padding:15px;
-	margin-left: 10px;
-
+	padding: 30px 15px 15px 30px !important;
 }
 
 #wotd strong{
@@ -98,11 +99,17 @@ ul#toggle-icons li img {
 	font-family: 'Cutive Mono', monospace;
 }
 
-}
-#questOTD ul{
+#questOTD ul {
 	  list-style-type: none;
 	  text-align: left;
+	  margin-bottom: 5px;
+	  margin-top: 10px;
 }
+
+#questOTD p {
+	margin-bottom: 0;
+}
+
 #questOTD, #quoteOTD, #wotd, #calendar {
 	  border-radius: 50px 15px 30px;
 	  margin-top: 20px;
@@ -123,7 +130,7 @@ ul#toggle-icons li img {
 	list-style-type: none;
 }
 
-input[type=submit]{
+input[type=submit], #questOTD input {
 	padding: 5px 15px;
 	border-radius: 10px 10px 10px 10px;
 	border-style: none;
@@ -131,11 +138,25 @@ input[type=submit]{
 	margin-top: 15px;
 }
 
+#questOTD input {
+	margin-top: 0;
+	min-width: 100%;
+}
+
 input#search-input{
 	background-color: rgba(255,255,255,.3);
 	/*border: 3px solid rgba(255,255,255,.6);*/
-	padding: 7px 2px 7px 2px;
+	padding: 7px 2px 7px 15px;
+	border-radius: 7px;
+	border: none;
 }
 
 
-
+.item-source {
+	position: absolute;
+	bottom: 15px;
+	right: 30px;
+	font-style: italic;
+	font-size: 10px;
+	color: rgba(255, 255, 255, 0.5);
+}
