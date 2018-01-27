@@ -1,4 +1,4 @@
-<!DOCTYPE html >
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -8,14 +8,37 @@
 	<link type="text/css" rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 
+	<!-- Include jQuery -->
+	<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+
 	<!-- Stylesheets -->
 	<link type="text/css" rel="stylesheet" href="css/style.css">
 
-	<!-- Fonts -->
-	<script>
-		
-		
+	<!-- JavaScript -->
+	<script type="text/javascript" src="js/clock.js"></script>
 
+	<!-- Fonts -->
+
+
+
+	<script type="text/javascript">
+
+	    // function init(){
+
+	    // 	console.log("Hey!");
+	    // 	clock("day", "month", "year", "clockHours", "clockMinutes");
+
+	    // }
+
+	    // document.addEventListener("DOMContentLoaded", init);
+
+		$( document ).ready(function() {
+
+			console.log("Document ready");
+			clock("day", "month", "year", "clockHours", "clockMinutes");
+
+		});
+		
 	</script>
 
 </head>
