@@ -27,27 +27,9 @@ div.date {
     zoom: 0.25;
 }
 
-/*#my-div
-{
-    width    : 400px;
-    height   : 200px;
-    overflow : hidden;
-    position : relative;
-}
-
-#my-iframe
-{
-    position : absolute;
-    top      : -100px;
-    left     : -100px;
-    width    : 1280px;
-    height   : 1200px;
-}*/
 
 .hiddenElement {
-
     visibility: hidden;
-
 }
 
 #toggle-icons {
